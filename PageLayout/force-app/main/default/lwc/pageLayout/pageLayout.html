@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Page Layout Field Explorer" icon-name="custom:custom63">
+
+        <lightning-combobox name="Object"
+                            label="Object"
+                            placeholder="Select Object"
+                            options={objectList}
+                            onchange={handleObjectList}>
+        </lightning-combobox>
+        <lightning-combobox name="Page Layout"
+                            label="Page Layout"
+                            placeholder="Select Page Layout"
+                            options={layoutList}
+                            onchange={handleLayoutList}>
+        </lightning-combobox>
+       
+        <div class="slds-grid slds-wrap">
+                <div class="slds-size--1-of-1">
+                    <div class="slds-float_right">
+                        <lightning-button label="Export in CSV" onclick={handleFileDownload}></lightning-button>    
+                    </div>
+                </div>
+                <div class="slds-size--1-of-1">
+                    <div class="slds-float_left slds-m-around_medium">
+                        <lightning-datatable key-field="id"
+                        data={fields}
+                        columns={columns}
+                        show-row-number-column
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+                </div>
+    </div>
+    </lightning-card>
+</template>
